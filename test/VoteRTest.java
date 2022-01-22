@@ -1,7 +1,3 @@
-//import static org.junit.jupiter.api.Assertions.*;
-
-//import org.junit.jupiter.api.Test;
-
 /*
  * Michael Novotny
  * 21 Jan 2022
@@ -39,6 +35,7 @@ public class VoteRTest {
 	// creating a file for the output of running VoteR
 	// so that I can run a simple assert on it
 	// compared to validated results done by hand
+	// also this needs throws for testing
 	@BeforeClass
 	public static void setUp() throws FileNotFoundException {
 		// file containing validated results
@@ -64,6 +61,8 @@ public class VoteRTest {
 		// This solution is acceptable for this particular implementation,
 		// but runs into the dangers of reading a whole file into memory,
 		// which is generally considered a bad move.
+		
+		// inspired by the second answer to this stackoverflow https://stackoverflow.com/questions/27379059/determine-if-two-files-store-the-same-content
 		byte[] expected = Files.readAllBytes(expectedText.toPath());
 		byte[] results = Files.readAllBytes(out.toPath());
 		

@@ -1,5 +1,12 @@
+/*
+ * Michael Novotny
+ * 21 Jan 2022
+ * CS 210 HW 1
+ */
 
+// Do I need to do javadocs for something like this?
 public class Main {
+	
 	// obviously if I was making this program for a legitimate purpose
 	// you would probably run it from the command line like:
 	// 			`java VoteR < filetotest.csv`
@@ -10,9 +17,6 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		// you could construct this with the path string.
-		VoteR voteR = new VoteR();
-		
-		voteR.processVoterData(pathToFile);
+		VoteR.processVoterData(pathToFile);
 	}
 }
