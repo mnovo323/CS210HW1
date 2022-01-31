@@ -84,8 +84,11 @@ public class VoteR {
 						}
 					}
 					
-					// if the message so far has been valid then it's time to print it
+					// if the message so far has been valid then it's time to print it and add ID to valid ID's
 					if (!containsInvalidData) {
+						// ADD ID TO VALID ID (Was embarrassed that I forgot this last time. I had it originally
+						// but re-factored my code and forgot it.
+						seenIDs.add(words[0]);
 						
 						// Perhaps an incredibly hacky way of removing the last semicolon
 						// I really don't know. It makes my test pass so what do I care.
